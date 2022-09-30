@@ -1,0 +1,1 @@
+Invoke-Command -ComputerName omadconnect -ScriptBLock {Start-ADSyncSyncCycle -PolicyType Delta} -credential root
