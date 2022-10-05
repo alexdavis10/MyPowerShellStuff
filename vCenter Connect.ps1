@@ -2,4 +2,6 @@
 
 $vCenterCred = Get-Credential
 
-Connect-VIServer omprodvc01,omvdivc01 -credential $vCenterCred
+$vCenterHost = Read-Host "vCenter(s) you wish to connect to: "
+
+Connect-VIServer $vCenterHost -credential $vCenterCred
