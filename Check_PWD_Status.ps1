@@ -2,4 +2,4 @@
 
 $Username = Read-Host "Username to check: "
 
-Get-ADUser -Identity $Username -Properties * | ft name,passwordlastset,passwordexpired,passwordneverexpires
+Get-ADUser -Identity $Username -Properties * | ft name,passwordlastset,,lockedout,passwordexpired,passwordneverexpires
