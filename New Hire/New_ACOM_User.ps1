@@ -1,7 +1,10 @@
 Add-Type -AssemblyName System.Web
 
+    # Enter location of New_Hire.csv file where new hire info is entered.
+    $CSVPath = Read-Host "Location of New_Hire.csv: "
+
 # Parameters to extract from New_Hire.csv file
-Import-Csv -Path $CSVPath | foreach {
+Import-Csv -Path $CSVPath | ForEach-Object {
    
 	$NewUserParameters = @{
 		GivenName = $_.FirstName
@@ -14,9 +17,6 @@ Import-Csv -Path $CSVPath | foreach {
         Department = $_.Department
         employeeNumber = $_.EmployeeNumber        
 	}
-
-    # Enter location of New_Hire.csv file where new hire info is entered.
-    $CSVPath = Read-Host "Location of New_Hire.csv: "
 
     #Path to OU
     $OUPath = Read-Host "Path to OU. Example (OU=Faculty,DC=acom,DC=edu)"
